@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Personal Computer License keeper</h1>
+    <hr>
+    {% if pcs %}
+        {% for pc in pcs %}
+            <h2>{{ pc.title }}</h2>
+            <p>
+            {{ pc.description }} <br>
+            <ol>
+                {% for license in pc.license_set.all %}
+                    <li> <b>{{ license.title }}</b>: {{ license.description }} </li> 
+                {% endfor %}
+            </ol>
+            </p>
+            <hr>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

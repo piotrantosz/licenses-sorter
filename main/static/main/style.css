@@ -4,6 +4,11 @@ body {
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     color: #171717;
     height: 100%;
+    background-color: #EEEEEE;
+    word-break: break-all;
+    margin-top: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 h1 {
@@ -11,10 +16,17 @@ h1 {
   color: #000;
 }
 
+h2 {
+  margin-left: 20px;
+}
+
+p {
+  margin-left: 30px;
+}
+
 .light {
     border: none;
     height: 1px;
-    /* Set the hr color */
     color: #dbdbdb; /* old IE */
     background-color: #dbdbdb; /* Modern Browsers */
 }

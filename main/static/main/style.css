@@ -1,0 +1,28 @@
+body {
+    line-height: normal;
+    font-weight: 300;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    color: #171717;
+    height: 100%;
+}
+
+hr {
+  color: #dbdbdb;
+  background-color: #dbdbdb;
+}
+
+h1 {
+  text-align: center;
+}
+
+.light {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #dbdbdb; /* old IE */
+    background-color: #dbdbdb; /* Modern Browsers */
+}
+
+.heavy {
+  height: 2px;
+}

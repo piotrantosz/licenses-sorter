@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <!-- CSS -->
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "main/style.css" %}"/>
+    <!-- Fonts -->
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:300,400,700'>
 </head>
 <body>
-    <h1>Personal Computer License keeper</h1>
-    <hr>
+    <h1>Licenses Sorter</h1>
+    <hr class="heavy">
     {% if pcs %}
         {% for pc in pcs %}
             <h2>{{ pc.title }}</h2>
             <p>
-            {{ pc.description }} <br>
+            <i>{{ pc.description }}</i> <br>
             <ol>
                 {% for license in pc.license_set.all %}
-                    <li> <b>{{ license.title }}</b>: {{ license.description }} </li> 
+                    <li> <b>{{ license.title }}</b>: {{ license.description }} </li>
                 {% endfor %}
             </ol>
             </p>
-            <hr>
+            <hr class="light">
         {% endfor %}
     {% endif %}
 </body>

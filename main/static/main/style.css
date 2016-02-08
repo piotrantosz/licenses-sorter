@@ -6,11 +6,6 @@ body {
     height: 100%;
 }
 
-hr {
-  color: #dbdbdb;
-  background-color: #dbdbdb;
-}
-
 h1 {
   text-align: center;
   color: #000;
@@ -25,5 +20,6 @@ h1 {
 }
 
 .heavy {
-  height: 2px;
+  color: #000;
+  background-color: #000;
 }

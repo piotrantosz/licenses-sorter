@@ -13,3 +13,6 @@ manage multiplce licences and connect them with selected PC's
 
 3. Create superuser<br />
 `python manage.py createsuperuser`
+
+4. Run server<br />
+`python manage.py runserver`

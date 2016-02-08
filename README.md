@@ -4,12 +4,12 @@ manage multiplce licences and connect them with selected PC's
 
 ## Installation
 
-Clone repository
+1. Clone repository<br />
 `git@github.com:Boquete/licences-sorter.git`
 
-In licences-sorter directory make migration
-`python manage.py makemigrations`
+2. In licences-sorter directory make migration<br />
+`python manage.py makemigrations`<br />
 `pyton manage.py migrate`
 
-Create superuser
+3. Create superuser<br />
 `python manage.py createsuperuser`

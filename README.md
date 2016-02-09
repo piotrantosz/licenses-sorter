@@ -1,13 +1,13 @@
-# Licences-sorter
-Easy to use application in Django to manage licences (e.g. in offices),
-manage multiplce licences and connect them with selected PC's
+# Licenses-sorter
+Easy to use application in Django to manage licenses (e.g. in offices),
+manage multiplce licenses and connect them with selected PC's
 
 ## Installation
 
 1. Clone repository<br />
-`git@github.com:Boquete/licences-sorter.git`
+`git@github.com:Boquete/licenses-sorter.git`
 
-2. In licences-sorter directory make migration<br />
+2. In licenses-sorter directory make migration<br />
 `python manage.py makemigrations`<br />
 `pyton manage.py migrate`
 

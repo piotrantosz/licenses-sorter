@@ -14,14 +14,6 @@ h1 {
     margin: 0px !important;
 }
 
-.header {
-    text-align: center;
-    color: #f5dd5d;
-    background-color: #417690;
-    padding: 10px;
-    margin: 0px !important;
-}
-
 i {
     padding-left: 25px;
     padding-right: 25px;
@@ -39,6 +31,10 @@ p {
 a {
     color: #f5dd5d;
     text-decoration: none;
+}
+
+a::-moz-focus-inner {
+    border: 0;
 }
 
 .light {
@@ -76,4 +72,12 @@ a {
 .textSearchvalue_h {
     margin-top: 10px;
 
+}
+
+.header {
+    text-align: center;
+    color: #f5dd5d;
+    background-color: #417690;
+    padding: 10px;
+    margin: 0px !important;
 }

@@ -10,20 +10,35 @@ body {
 }
 
 h1 {
-  text-align: center;
-  color: #f5dd5d;
-  font-family: 'Lobster Two', Helvetica, Arial, sans-serif;
-  background-color: #417690;
-  padding: 20px;
-  margin: 0px !important;
+    font-family: 'Lobster Two', Helvetica, Arial, sans-serif;
+    margin: 0px !important;
+}
+
+.header {
+    text-align: center;
+    color: #f5dd5d;
+    background-color: #417690;
+    padding: 10px;
+    margin: 0px !important;
+}
+
+i {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
 }
 
 h2 {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 p {
-  margin-left: 30px;
+    margin-left: 30px;
+}
+
+a {
+    color: #f5dd5d;
+    text-decoration: none;
 }
 
 .light {
@@ -34,6 +49,31 @@ p {
 }
 
 .heavy {
-  color: #000;
-  background-color: #000;
+    color: #000;
+    background-color: #000;
+}
+
+.highlighted {
+
+    background-color: yellow;
+}
+
+.highlight {
+    background-color: #fff34d;
+    -moz-border-radius: 5px; /* FF1+ */
+    -webkit-border-radius: 5px; /* Saf3-4 */
+    border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
+}
+
+.highlight {
+    padding: 1px 4px;
+    margin: 0 -4px;
+}
+
+.textSearchvalue_h {
+    margin-top: 10px;
+
 }

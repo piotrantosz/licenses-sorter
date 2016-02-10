@@ -7,24 +7,104 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static "main/style.css" %}"/>
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext' rel='stylesheet'
+          type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two:400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Searching -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function searchAndHighlight(searchTerm, selector) {
+            if (searchTerm) {
+                var selector = selector || "#realTimeContents"; //use body as selector if none provided
+                var searchTermRegEx = new RegExp(searchTerm, "ig");
+                var matches = $(selector).text().match(searchTermRegEx);
+                if (matches != null && matches.length > 0) {
+                    $('.highlighted').removeClass('highlighted'); //Remove old search highlights
+
+                    //Remove the previous matches
+                    $span = $('#realTimeContents span');
+                    $span.replaceWith($span.html());
+
+                    if (searchTerm === "&") {
+                        searchTerm = "&amp;";
+                        searchTermRegEx = new RegExp(searchTerm, "ig");
+                    }
+                    $(selector).html($(selector).html().replace(searchTermRegEx, "<span class='match'>" + searchTerm + "</span>"));
+                    $('.match:first').addClass('highlighted');
+
+                    var i = 0;
+
+                    $('.next_h').off('click').on('click', function () {
+                        i++;
+
+                        if (i >= $('.match').length) i = 0;
+
+                        $('.match').removeClass('highlighted');
+                        $('.match').eq(i).addClass('highlighted');
+                        $('.ui-mobile-viewport').animate({
+                            scrollTop: $('.match').eq(i).offset().top
+                        }, 300);
+                    });
+                    $('.previous_h').off('click').on('click', function () {
+
+                        i--;
+
+                        if (i < 0) i = $('.match').length - 1;
+
+                        $('.match').removeClass('highlighted');
+                        $('.match').eq(i).addClass('highlighted');
+                        $('.ui-mobile-viewport').animate({
+                            scrollTop: $('.match').eq(i).offset().top
+                        }, 300);
+                    });
+
+
+                    if ($('.highlighted:first').length) { //if match found, scroll to where the first one appears
+                        $(window).scrollTop($('.highlighted:first').position().top);
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        $(document).on('click', '.searchButtonClickText_h', function (event) {
+
+            $(".highlighted").removeClass("highlighted").removeClass("match");
+            if (!searchAndHighlight($('.textSearchvalue_h').val())) {
+                alert("No results found");
+            }
+
+
+        });
+    </script>
+
 </head>
 <body>
+<div class="header">
     <h1>Licenses Sorter</h1>
+    <input name="text-12" id="text-12" value="" type="text" class="textSearchvalue_h"/><br>
+    <a href="#" class="previous_h"><i class="fa fa-arrow-left"></i></a>
+    <a href="#" class="searchButtonClickText_h"><i class="fa fa-search"></i></a>
+    <a href="#" class="next_h"><i class="fa fa-arrow-right"></i></a>
+</div>
+
+<div id="realTimeContents">
     {% if pcs %}
         {% for pc in pcs %}
             <h2>{{ pc.title }}</h2>
             <p>
-            <i>{{ pc.description }}</i> <br>
+                <i>{{ pc.description }}</i> <br>
             <ol>
                 {% for license in pc.license_set.all %}
-                    <li> <b>{{ license.title }}</b>: {{ license.description }} </li>
+                    <li><b>{{ license.title }}</b>: {{ license.description }} </li>
                 {% endfor %}
             </ol>
             </p>
             <hr class="light">
         {% endfor %}
     {% endif %}
+</div>
 </body>
 </html>

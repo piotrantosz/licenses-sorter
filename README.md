@@ -16,3 +16,11 @@ manage multiplce licenses and connect them with selected PC's
 
 4. Run server<br />
 `python manage.py runserver`
+
+## ToDo
+
+1. Change layout of list website
+
+2. Add sharing option
+
+3. Change list layout to cards

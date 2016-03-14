@@ -9,7 +9,7 @@ manage multiplce licenses and connect them with selected PC's
 
 2. In licenses-sorter directory make migration<br />
 `python manage.py makemigrations`<br />
-`pyton manage.py migrate`
+`python manage.py migrate`
 
 3. Create superuser<br />
 `python manage.py createsuperuser`

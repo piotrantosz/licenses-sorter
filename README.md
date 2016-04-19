@@ -1,6 +1,6 @@
 # Licenses-sorter
 Easy to use application in Django to manage licenses (e.g. in offices),
-manage multiplce licenses and connect them with selected PC's
+manage multiple licenses and connect them with selected PC's
 
 ## Installation
 
